@@ -12,10 +12,12 @@ window.onresize = function(){
 }
 
 function drawPretty(){
-    for (let i = 0; i < 32; i++) {
-        for (let j = 0; j < 18; j++) {
-            ctx.fillStyle = `rgb(${Math.random()*255} ${Math.random()*255} ${Math.random()*255})`;
-            ctx.fillRect(i*(c.width/32), j*(c.height/18), (c.width/32), (c.height/18));
+    let m = 128;
+    let n = 72;
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            ctx.fillStyle = `rgb(${Math.random()*255} ${Math.random()*128} ${Math.random()*64})`;
+            ctx.fillRect(i*(c.width/m), j*(c.height/n), (c.width/m), (c.height/n));
         }
     };
     requestAnimationFrame(drawPretty);
