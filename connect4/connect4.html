@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect4 Game With AI</title>
+  <link rel="icon" type="image/x-icon" href="red.png">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: #fffeed; */
+      background-color: #1e0600;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    #label{
+        margin-right: 100px;
+    }
+    span{
+        font-family: Arial bold, sans-serif;
+        font-size: 40px;
+        justify-content: center;
+        margin-bottom: 20px;   
+    }
+    #stat{
+        position: absolute;
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        top: 5.3%; 
+        left: 65%;
+        border: 2px solid #444;   
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 7px;
+        padding-top: 7px;
+    }
+    .container {
+      border: 4px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgb(206, 206, 200);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(7, 130px);
+      grid-template-rows: repeat(6, 130px);
+      gap: 5px;
+      justify-content: center;
+      background-color: #0327a8;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .cell {
+      width: 121px;
+      height: 121px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell img {
+      width: 100%;
+      height: auto;
+    }
+
+</style>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <span id="label">CONNECT4 Game With AI</span>
+    <div id="stat">Go ahead</div>
+    
+    <div class="board" id="board">
+      <!-- Example of one row of 7 cells -->
+      <!-- Repeat 6 rows = 42 total cells -->
+      <!-- You can use JavaScript to fill in the images dynamically later -->
+      <!-- Empty example cells -->
+
+      <!-- <div class="cell"><img src="blank.png" alt=""></div> -->
+      
+      
+      <!-- Repeat this block 6 times or generate with JS -->
+    </div>
+</div>
+<p>
+    <br>
+    <br>
+    <!-- <form action="http://127.0.0.1:5100/submit" method="post">
+        <label for="move">Your Move:</label><br>
+        <input type="text" id="move" name="move"><br><br>
+        <input type="submit" value="Submit">
+    </form> -->
+</p>
+<script src="connect4.js"></script>
+</body>
+
+</html>
+
