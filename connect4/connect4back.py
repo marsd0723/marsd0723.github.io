@@ -10,6 +10,7 @@ def home():
 @app.route('/reset')
 def reset():
     v1_52.board_ = [row[:] for row in v1_52.board0]
+    v1_52.count = 0
     return "reset successfully"
 
 @app.route('/connect4get')
@@ -18,8 +19,8 @@ def connect4get():
     v1_52.drop(v1_52.board_, move, 1)
     v1_52.printBoard(v1_52.board_)
 
-
-    r, st = v1_52.aiPlayer(v1_52.board_, 5, 2)
+    v1_52.count += 2
+    r, st = v1_52.aiPlayer(v1_52.board_, 8, 2)
     print(r, st)
     status = "-99" if v1_52.isWin(v1_52.board_, 1) else\
     "-101" if v1_52.isWin(v1_52.board_, 2) else\

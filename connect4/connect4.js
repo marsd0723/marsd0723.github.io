@@ -32,6 +32,7 @@ function updateLabel(s){
 //     const cellImg = allCells[index].querySelector('img');
 //     cellImg.src = imgSrc;
 // }
+
 function erase(){
     for (let row = rows-1; row >= 0; row--){
         for (let col= cols-1; col>= 0; col--){
@@ -48,18 +49,19 @@ function erase(){
     }
 }
 
-    function dropPiece(col, color){
-        for (let row = rows-1; row >= 0; row--){
-            const index = row*cols + col;
-            const cell = document.querySelectorAll('.cell')[index];
-            const img = cell.querySelector('img');
-            if (img.src.includes('blank.png')){
-                img.src = color +'.png';
-                return true;
-            }
+
+function dropPiece(col, color){
+    for (let row = rows-1; row >= 0; row--){
+        const index = row*cols + col;
+        const cell = document.querySelectorAll('.cell')[index];
+        const img = cell.querySelector('img');
+        if (img.src.includes('blank.png')){
+            img.src = color +'.png';
+            return true;
         }
-        return false;
     }
+    return false;
+}
 
 
     // Example: Handle click to drop piece
@@ -112,7 +114,7 @@ window.addEventListener('selectstart', function(e) {
         let col = Math.floor((e.x-left) / colW);
         
         erase();
-        if (!dropPiece(col, 'red+')) {waiting=false; return; };
+        if (!dropPiece(col, 'red+')) {waiting=false; document.getElementById("stat").innerHTML = "Col is Full"; return; };
 
 
         // Find the lowest empty row in that column
